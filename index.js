@@ -1,12 +1,9 @@
 var http = require('http');
-var dt = require('./date');
+var dt = require('./index');
 const express = require('express');
 const app = express();
 const port = 8080;
 var city;
-
-
-
 
 const bodyParser = require('body-parser');
 
@@ -14,17 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, resp) {
 
-
-
-
-
-
-
-  var axios = require('axios')
-  city = req.query['city'];
-  var temp;
-
-
+var axios = require('axios')
+city = req.query['city'];
 
 axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=3c330ea3089059fcb33aad06e58b4cc0`)
       .then(function (res) {
@@ -48,9 +36,7 @@ axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperi
           humidity:this.humidity,
           wind:this.wind,
           summary:this.summary
-
-
-        };
+         };
 
         const myObjStr = JSON.stringify(myObj);
         console.log(myObjStr);
@@ -58,20 +44,11 @@ axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperi
 
         resp.send(myObjStr);
 
-
       })
       .catch(function (error) {
           console.log(error);
           resp.send(error);
       });
-
-
-
-
-
-
-
-
 
 });
 app.listen(8080);
