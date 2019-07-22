@@ -11,8 +11,7 @@ var app = express();
 
 
 
-app.use('/', index);
-
+app.use('/', index, );
 
 
 
