@@ -1,18 +1,12 @@
 
 const express = require('express');
 var router = express.Router();
-
 var router = express.Router();
-
-
 
 router.get('/', function (req, resp) {
   var axios = require('axios')
-
   city = req.query['city']
-
-
-       axios
+axios
       .get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=3c330ea3089059fcb33aad06e58b4cc0`)
     .then(function (res) {
       this.city = res.data.name
@@ -45,10 +39,6 @@ router.get('/', function (req, resp) {
       console.log(error)
       resp.send(error)
     });
-
-
-
-
 
 });
 

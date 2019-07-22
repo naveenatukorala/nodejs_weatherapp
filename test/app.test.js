@@ -1,16 +1,9 @@
 const expect = require('chai').expect;
 const nock = require('nock');
-
-
 const express = require('express');
 const app = express();
-
-
 const use = require('../app').use;
-
 var res;
-
-
 
 describe('Get weather details', () => {
   beforeEach(function () {
