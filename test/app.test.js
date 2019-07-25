@@ -15,11 +15,10 @@ describe('Get weather details', () => {
 
   it('Get weather by city', function()  {
      return module.exports = app; ('Dhaka')
-        //expect an object back
+        //expect an object backx
 
-
-        //Test result of name, company and location for the response
-        expect(res.data.name).to.equal('Dhaka')
+       //Test result of name, company and location for the response
+     expect(res.data.name).to.equal('Dhaka')
 
       });
   });
