@@ -10,7 +10,7 @@ axios
       .get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=3c330ea3089059fcb33aad06e58b4cc0`)
     .then(function (res) {
       this.city = res.data.name
-      this.currentTemp = res.data.main.temp
+
       this.minTemp = res.data.main.temp_min
       this.maxTemp = res.data.main.temp_max
       this.pressure = res.data.main.pressure
@@ -21,7 +21,7 @@ axios
       const myObj =
                  {
                    city: this.city,
-                   currentTemp: this.currentTemp,
+                   
                    temp_min: this.minTemp,
                    maxTemp: this.maxTemp,
                    pressure: this.pressure,
